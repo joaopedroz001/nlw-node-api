@@ -1,0 +1,39 @@
+- API SOAP (arquivo xml que especificava as rotas/formato de entrada/saída de dados), API REST (arquivo json)
+
+- Métodos HTTP: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, ...
+
+- Microframeworks node.js: Fastify, NestJS, ExpressJS...
+
+- TypeScript: foi usado TS para ter maior segurança na hora de fazer o código, pois TS tem tipagem estática, porém, no final todo TS
+é convertido para JS para que o node consiga entender no backend
+
+- Porta de entrada de informações para uma API:
+	Corpo da requisição (Request Body - require POST || PUT - dados para a criação/aleração de um registro)
+	Parâmetros de busca (Search Params / Query Params- utilizados na URL para filtragem de dados `http://localhost:3333/users?name=joao`)
+	Parêmetros de rotas (Route Params - identificações de recursos - PUT || DELETE || GET || PATCH `DELETE http://localhost:333/users/3`)
+	Cabeçalhos (Headers - trasitar informações do contexto da req)
+
+- Semântica = Significado
+
+- DATA BASE
+	Driver nativo -> cria conexão e escreve as querys na mão
+	Query builders -> utiliza a sintaxe da lang pra escrever a query SQL 
+	ORMs (Object Relational Mapping) -> ferramenta que automatiza processos do DB, como versionamento do DB (Prisma)  
+
+- Browser só consegue acessar rotas do tipo GET
+- Fazer validação dos dados com todas as operações feitas (Criação, Atualização, Remoção) - feita com zod
+- zod cria uma especificação/schema, que é uma representação de uma estrutura de dados 
+
+- STATUS CODE HTTP:
+	20x -> Sucesso
+	30x -> Redirecionamento
+	40x -> Client error (Erro em alguma informação enviada por QUEM está fazendo a chamada p/ a API)
+	50x -> Server error (Erro que está acontecendo INDEPENDETE do que está sendo enviado p/ o servidor)
+
+- ZodTypeProvider: adiciona validação fora do escopo da rota criada
+	body: validação no Body da requisição
+	headers: validação no Header da requisição
+	params: validação nos Route Params da requisição
+	querystrings: validação nos Search/Query Params da requisição
+	response: validação da informação devolvida da requisição com  base no status code
+

@@ -1,0 +1,35 @@
+### CREATE EVENT
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "New Event",
+    "details": null,
+    "maximumAttendees": 100
+}
+
+### CREATE ATTENDEE
+
+POST http://localhost:3333/events/09622770-3bfd-413f-98dc-9aaf9c04fc6a/attendees
+Content-Type: application/json
+
+{
+    "name": "João Pedro",
+    "email": "joaopedro@rocketseat.com.br"
+}
+
+### GET EVENT
+
+GET http://localhost:3333/events/6e4ab4d5-a647-4fc6-9cfa-266749a11aeb
+
+### GET ATTENDEE
+
+GET http://localhost:3333/attendees/5/badge
+
+### CHECK-IN
+
+GET http://localhost:3333/attendees/5/check-in
+
+### SEARCH EVENT ATTEENDEES
+
+GET http://localhost:3333/events/09622770-3bfd-413f-98dc-9aaf9c04fc6a/attendees?query=João+Pedro
