@@ -39,7 +39,9 @@ Nessa aplicação vamos utilizar banco de dados relacional (SQL). Para ambiente 
 
 ### Diagrama ERD
 
-<img src="./db_structure.svg" width="600" style="margin: auto" alt="Diagrama ERD do banco de dados" />
+<div align="center">
+    <img src="./db_structure.svg" width="600" alt="Diagrama ERD do banco de dados" />
+</div>
 
 ### Estrutura do banco (SQL)
 
